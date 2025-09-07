@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  /* Neutrals (light theme) */
+  --bg:        #FCF8F3; /* page background */
+  --surface:   #FFFFFF; /* cards/sections */
+  --surface-2: #FCF4E5; /* alt band / hero tint */
+  --border:    #DDD1C1; /* hairlines & card borders */
+  --ink:       #23280F; /* primary text */
+  --ink-muted: #5E706E; /* secondary text */
+
+  /* Brand accent from the photo’s blue */
+  --ocean: #0A6F9D;
+  /* Derivatives for states (computed in CSS so you don’t need extra hexes) */
+  --ocean-700: color-mix(in oklab, var(--ocean) 80%, black);
+  --ocean-50:  color-mix(in oklab, var(--ocean) 10%, white);
+
+  /* Optional warm accent (very sparing, from the khaki tones) */
+  --driftwood: #8F7E59;
+  --driftwood-50: color-mix(in oklab, var(--driftwood) 12%, white);
+}
+
+body { background: var(--bg); color: var(--ink); }
+
+/* Buttons & links */
+@layer components{
+  .btn{ @apply inline-flex items-center rounded-2xl px-5 py-3 transition focus:outline-none; }
+  .btn-primary{ background:var(--accent); color:#fff; }
+  .btn-primary:hover{ background:var(--accent-700); }
+  .btn-ghost{ background:rgba(10,18,32,.04); }
+  .btn-ghost:hover{ background:rgba(10,18,32,.08); }
+  .btn-outline{ border:1px solid var(--border); }
+  .btn-outline:hover{ background:rgba(10,18,32,.04); }
+  .chip{ @apply text-sm rounded-full px-3 py-1; border:1px solid color-mix(in oklab, var(--teal) 40%, transparent); color:var(--ink); }
+
+  a{ text-decoration-thickness:.06em; text-underline-offset:.22em; color:var(--ink); }
+  a:hover{ color:var(--accent); }
+  :focus-visible{ outline:2px solid color-mix(in oklab, var(--teal) 70%, transparent); outline-offset:3px; }
+}
+
+/* Hero background suggestion */
+.hero-bg{
+  background:
+    radial-gradient(700px 340px at 75% -10%, color-mix(in oklab, var(--accent) 10%, transparent), transparent),
+    radial-gradient(600px 280px at 10% 30%, color-mix(in oklab, var(--teal) 8%, transparent), transparent),
+    linear-gradient(180deg, var(--bg), #fff);
+}

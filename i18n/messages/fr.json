@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Agathe Coulombier",
+    "role": "Développeuse Web",
+    "tagline": "Des interfaces calmes, inspirées par la mer."
+  },
+  "cta": {
+    "viewWork": "Voir mes projets",
+    "contact": "Contact",
+    "downloadCV": "Télécharger le CV"
+  },
+  "projects": {
+    "title": "Sélection de projets",
+    "foodcheri": {
+      "title": "FoodChéri / Seazon",
+      "points": [
+        "Composants React pour les flux de production",
+        "Intégrations API et pipelines de données",
+        "Contraintes réelles et rythme soutenu"
+      ]
+    },
+    "kranda": {
+      "title": "Kranda Yachting",
+      "points": [
+        "UX de location et gestion d’images",
+        "Contenus multilingues et parcours de réservation",
+        "Performance et accessibilité"
+      ]
+    },
+    "sail": {
+      "title": "Sail On Bamboo",
+      "points": [
+        "Liberté de design et récit océan",
+        "Optimisation statique et storytelling",
+        "UI légère et accessible"
+      ]
+    }
+  },
+  "about": {
+    "title": "À propos"
+  },
+  "contact": {
+    "title": "Contact"
+  }
+}

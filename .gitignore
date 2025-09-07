@@ -1,0 +1,40 @@
+# Node / package managers
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+.vercel/
+.turbo/
+
+# TypeScript
+*.tsbuildinfo
+
+# Tests / coverage (enable if you add tests)
+coverage/
+playwright-report/
+test-results/
+
+# Env files (keep a public template)
+.env*
+!.env.example
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Builds / misc
+dist/
+build/
+tmp/
+temp/

@@ -11,7 +11,7 @@ export default function LocaleSwitcher() {
     const segments = pathname.split('/');
     segments[1] = next; // /[locale]/...
     document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=31536000`; // persist 1y
-    router.push(segments.join('/'));
+    router.push(segments.join('/') as any);
   }
 
   return (

@@ -1,7 +1,7 @@
 import {ReactNode} from 'react';
 
 export default function ProjectCard({title, subtitle, bullets, href, children}:{ 
-  title:string; subtitle?:string; bullets:string[]; href?:string; children?:ReactNode;
+  title:string; subtitle?:string; bullets:readonly string[]; href?:string; children?:ReactNode;
 }) {
   return (
     <a href={href} className="group block rounded-2xl p-6 bg-white shadow-card hover:shadow-lg transition will-change-transform">

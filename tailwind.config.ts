@@ -9,7 +9,7 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			primary: {
+  			brand: {
   				DEFAULT: '#0a2342', // Deep navy
   				dark: '#102a43',
   				light: '#1b3a5b',
@@ -18,7 +18,7 @@ export default {
   				DEFAULT: '#ff6f3c', // Vibrant orange
   				light: '#ff9a3c',
   			},
-  			secondary: {
+  			blueish: {
   				DEFAULT: '#3a6ea5', // Soft blue
   				light: '#b3cde0',
   			},

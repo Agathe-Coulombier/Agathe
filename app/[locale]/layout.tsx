@@ -1,10 +1,8 @@
 import '../globals.css';
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, setRequestLocale} from 'next-intl/server';
+import {getMessages} from 'next-intl/server';
 import type {Metadata} from 'next';
 import {locales} from '@/i18n/locales';
-
-export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -14,7 +12,7 @@ export async function generateMetadata(
   props: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await props.params;
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://agathe-coulombier.vercel.app';
 
   return {
     metadataBase: new URL(baseUrl),
@@ -39,16 +37,16 @@ export async function generateMetadata(
   };
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;       // 👈 await params
-  setRequestLocale(locale);
+  const { locale } = await params;
   const messages = await getMessages();
+  
   return (
     <html lang={locale}>
       <body className="min-h-screen text-ink body-gradient">

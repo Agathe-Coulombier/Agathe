@@ -1,0 +1,60 @@
+.scramble-text {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: none;
+}
+
+.scramble-text:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.02em;
+}
+
+/* Custom Crosshair Cursor */
+.custom-cursor-area {
+  cursor: none !important;
+}
+
+.custom-cursor-area * {
+  cursor: none !important;
+}
+
+.crosshair {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.crosshair-line {
+  position: absolute;
+  background-color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.crosshair-horizontal {
+  width: 20px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.crosshair-vertical {
+  width: 2px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Expanded state on hover */
+.crosshair.expanded .crosshair-horizontal {
+  width: 40px;
+}
+
+.crosshair.expanded .crosshair-vertical {
+  height: 40px;
+}

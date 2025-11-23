@@ -5,14 +5,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Agathe Coulombier",
-    "role": "Développeuse Web",
-    "tagline": "Des interfaces calmes, inspirées par la mer."
+    "job": "Développeuse Web",
+    "name": "Je suis Agathe Coulombier",
+    "tagline": "Je ferai vivre vos idées en ligne."
   },
   "cta": {
-    "viewWork": "Voir mes projets",
-    "contact": "Contact",
-    "downloadCV": "Télécharger le CV"
+    "letsmeet": "Rencontrons-nous",
+    "portfolio": "Portfolio"
   },
   "projects": {
     "title": "Sélection de projets",

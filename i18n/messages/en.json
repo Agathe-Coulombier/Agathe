@@ -5,14 +5,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Agathe Coulombier",
-    "role": "Web Developer",
-    "tagline": "Calm interfaces with a touch of the sea."
+    "job": "Web Developer",
+    "name": "I am Agathe Coulombier",
+    "tagline": "I'll bring your ideas to life online."
   },
   "cta": {
-    "viewWork": "View my work",
-    "contact": "Contact",
-    "downloadCV": "Download CV"
+    "letsmeet": "Let’s connect",
+    "portfolio": "Portfolio"
   },
   "projects": {
     "title": "Selected Work",

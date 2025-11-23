@@ -1,14 +1,13 @@
 import createMiddleware from 'next-intl/middleware';
+import { locales, defaultLocale } from './i18n/locales';
 
 export default createMiddleware({
-  locales: ['en', 'fr'],
-  defaultLocale: 'en',
+  locales,
+  defaultLocale,
   localePrefix: 'always'
 });
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next, api, etc.)
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)'
-  ]
+  // Match only internationalized pathnames
+  matcher: ['/', '/(fr|en)/:path*']
 };

@@ -1,13 +1,29 @@
-import { redirect } from 'next/navigation';
-import { headers } from 'next/headers';
+'use client';
 
-export default async function RootPage() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get('accept-language') || '';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function RootPage() {
+  const router = useRouter();
   
-  // Check if French is preferred
-  const prefersFrench = acceptLanguage.toLowerCase().includes('fr');
-  const locale = prefersFrench ? 'fr' : 'en';
+  useEffect(() => {
+    // Check browser language
+    const browserLang = navigator.language.toLowerCase();
+    const locale = browserLang.startsWith('fr') ? 'fr' : 'en';
+    
+    router.replace(`/${locale}`);
+  }, [router]);
   
-  redirect(`/${locale}`);
+  // Show minimal loading state
+  return (
+    <div style={{ 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      height: '100vh',
+      fontFamily: 'system-ui'
+    }}>
+      Loading...
+    </div>
+  );
 }

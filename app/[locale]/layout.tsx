@@ -1,8 +1,9 @@
-import '../globals.css';
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
+import {getMessages, setRequestLocale} from 'next-intl/server';
 import type {Metadata} from 'next';
 import {locales} from '@/i18n/locales';
+
+export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -22,31 +23,25 @@ export async function generateMetadata(
     openGraph: {
       type: 'website',
       url: `${baseUrl}/${locale}`,
-      title: locale === 'fr' ? 'Agathe — Développeuse Web' : 'Agathe — Web Developer',
-      description:
-        locale === 'fr'
-          ? 'Portfolio minimal, inspirations océanes.'
-          : 'Minimal portfolio with ocean inspirations.',
+      title: 'Agathe Coulombier',
+      description: 'Portfolio',
       images: ['/og.png']
     },
-    title: locale === 'fr' ? 'Agathe — Développeuse Web' : 'Agathe — Web Developer',
-    description:
-      locale === 'fr'
-        ? 'Portfolio minimal, inspirations océanes.'
-        : 'Minimal portfolio with ocean inspirations.'
+    title: 'Agathe Coulombier',
+    description: 'Portfolio'
   };
 }
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale } = await params;       // 👈 await params
+  setRequestLocale(locale);
   const messages = await getMessages();
-  
   return (
     <html lang={locale}>
       <body className="min-h-screen text-ink body-gradient">

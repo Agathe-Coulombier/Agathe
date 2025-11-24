@@ -1,16 +1,7 @@
 import {getRequestConfig} from 'next-intl/server';
-import {notFound} from 'next/navigation';
 
-export default getRequestConfig(async ({requestLocale}) => {
-  // This will correspond to the `[locale]` segment from the URL
-  let locale = await requestLocale;
-  
-  // Ensure we have a valid locale
-  if (!locale || !['en', 'fr'].includes(locale)) {
-    locale = 'en';
-  }
-  
-  return {
-    messages: (await import(`./messages/${locale}.json`)).default
-  } as any;
+export default getRequestConfig(async ({locale}) => {
+  const active = (locale === 'fr' || locale === 'en') ? locale : 'en';
+  const messages = (await import(`./messages/${active}.json`)).default;
+  return {locale: active, messages};
 });

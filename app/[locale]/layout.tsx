@@ -1,13 +1,11 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import type {Metadata} from 'next';
-import {locales} from '@/i18n/locales';
+import {routing} from '@/i18n/routing';
 import '../globals.css';
 
-export const dynamic = 'force-static';
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
 }
 
 export async function generateMetadata(

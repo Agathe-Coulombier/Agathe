@@ -12,7 +12,7 @@
   --ink-muted: #5E706E; /* secondary text */
 
   /* Brand accent from the photo’s blue */
-  --ocean: #0A6F9D;
+  --ocean: #0A6F9D; 
   /* Derivatives for states (computed in CSS so you don’t need extra hexes) */
   --ocean-700: color-mix(in oklab, var(--ocean) 80%, black);
   --ocean-50:  color-mix(in oklab, var(--ocean) 10%, white);
